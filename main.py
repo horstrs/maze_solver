@@ -1,9 +1,19 @@
 from graphics import Window, Point
 from cell import Cell
+from maze import Maze
 
 def main():
     win = Window(800, 600)
-    point_1 = Point(5, 5)
+    maze_top_left = Point(4,4)
+    maze = Maze(
+        maze_top_left,
+        3,
+        6,
+        20,
+        20,
+        win
+    )
+    """point_1 = Point(5, 5)
     point_2 = Point(40, 40)
 
     point_3 = Point(40, 5)
@@ -32,7 +42,7 @@ def main():
     c = Cell(win)
     c.has_top_wall = False
     c.draw(Point(300, 300), Point(500, 500))
-
+"""
     win.wait_for_close()
 
 
