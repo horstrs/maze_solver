@@ -9,9 +9,9 @@ def main():
     point_4 = Point(75, 40)
     
     cell1 = Cell(win)
-    #cell1.draw(point_1, point_2)
+    cell1.draw(point_1, point_2)
     cell2 = Cell(win)
-    #cell2.draw(point_3, point_4)
+    cell2.draw(point_3, point_4)
 
 
     c = Cell(win)
