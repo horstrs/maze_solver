@@ -1,4 +1,5 @@
-from graphics import Window, Point, Line, Cell
+from graphics import Window, Point
+from cell import Cell
 
 def main():
     win = Window(800, 600)
@@ -12,6 +13,8 @@ def main():
     cell1.draw(point_1, point_2)
     cell2 = Cell(win)
     cell2.draw(point_3, point_4)
+
+    cell1.draw_move(cell2)
 
 
     c = Cell(win)
