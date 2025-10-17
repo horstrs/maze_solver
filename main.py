@@ -4,11 +4,11 @@ from maze import Maze
 
 def main():
     win = Window(800, 600)
-    maze_top_left = Point(4,4)
+    maze_top_left = Point(20,20)
     maze = Maze(
         maze_top_left,
-        3,
-        6,
+        20,
+        30,
         20,
         20,
         win

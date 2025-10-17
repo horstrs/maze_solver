@@ -21,11 +21,12 @@ class Maze():
         self.__win = win
         self.__cells = []
         self.__create_cells()
+        self.__break_entrance_and_exit()
     
     def __create_cells(self):
-        for i in range(self.__num_cols):
+        for i in range(self.__num_rows):
             new_line = []
-            for j in range(self.__num_rows):
+            for j in range(self.__num_cols):
                 new_cell = Cell(self.__win)
                 self.__draw_cell(new_cell, i, j)
                 new_line.append(new_cell)
@@ -51,4 +52,14 @@ class Maze():
     def __animate(self):
         if self.__win is not None:
             self.__win.redraw()
-            time.sleep(0.1)
+            time.sleep(0.005)
+
+    def __break_entrance_and_exit(self):
+        maze_entrance = self.__cells[0][0]
+        maze_entrance.has_top_wall = False
+        last_line = len(self.__cells) - 1
+        last_col = len(self.__cells[last_line]) - 1
+        maze_exit = self.__cells[last_line][last_col]
+        maze_exit.has_bottom_wall = False
+        self.__draw_cell(maze_entrance, 0, 0)
+        self.__draw_cell(maze_exit, last_line, last_col)
